@@ -16,20 +16,20 @@ public class Game extends Canvas implements Runnable {
 
     public Game() {
         handler = new Handler();
-        this.addKeyListener(new KeyInput(handler));
+        //this.addKeyListener(new KeyInput(handler));
 
         new Window(WIDTH, HEIGHT, "Test Game", this);
 
-        hud = new HUD();
+        //hud = new HUD();
         
-        r = new Random();
+        //r = new Random();
 
-        handler.addObject(new Player(WIDTH/2 -32, HEIGHT/2 -32, ID.Player, handler));
+        // handler.addObject(new Player(WIDTH/2 -32, HEIGHT/2 -32, ID.Player, handler));
         
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
-        handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
+        // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
+        // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
+        // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
+        // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
     }
 
     private static final long serialVersionUID = 1L;
@@ -80,7 +80,7 @@ public class Game extends Canvas implements Runnable {
 
     private void tick() {
         handler.tick();
-        hud.tick();
+        //hud.tick();
     }
 
     private void render() {
@@ -92,12 +92,12 @@ public class Game extends Canvas implements Runnable {
 
         Graphics g = bs.getDrawGraphics();
 
-        g.setColor(Color.black);
+        g.setColor(Color.blue);
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
         handler.render(g);
 
-        hud.render(g);
+        //hud.render(g);
         
         g.dispose();
         bs.show();
