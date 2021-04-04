@@ -1,5 +1,5 @@
-hello/Ant.java
- hello.Ant
+hello/KeyInput.java
+ hello.KeyInput
 hello/Trail.java
  hello.Trail
 hello/Window.java
@@ -8,15 +8,15 @@ hello/Environment.java
  hello.Environment
 hello/Handler.java
  hello.Handler
-hello/Game.java
- hello.Game
+hello/ID.java
+ hello.ID
 hello/BasicEnemy.java
  hello.BasicEnemy
 hello/GameObject.java
  hello.GameObject
 hello/HUD.java
  hello.HUD
-hello/ID.java
- hello.ID
-hello/KeyInput.java
- hello.KeyInput
+hello/Ant.java
+ hello.Ant
+hello/Game.java
+ hello.Game

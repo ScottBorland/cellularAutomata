@@ -14,10 +14,11 @@ public class Game extends Canvas implements Runnable {
     private Handler handler;
     private Environment environment;
     private HUD hud;
-    private int scale = 1; 
+    private int scale = 4; 
 
     public Game() {
         handler = new Handler();
+        r = new Random();
         environment = new Environment(WIDTH/scale, HEIGHT/scale, scale, scale);
         //this.addKeyListener(new KeyInput(handler));
 
@@ -26,7 +27,10 @@ public class Game extends Canvas implements Runnable {
         //hud = new HUD();
 
         // handler.addObject(new Player(WIDTH/2 -32, HEIGHT/2 -32, ID.Player, handler));
-        handler.addObject(new Ant(WIDTH/6 -32, HEIGHT/6 -32, ID.Ant, handler, environment));
+        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
+        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
+        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
+        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
         
         // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
         // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));

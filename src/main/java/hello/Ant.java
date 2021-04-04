@@ -25,7 +25,7 @@ public class Ant extends GameObject {
     }
 
     public void tick(){
-        for(int i = 0; i < 100; i++){
+        for(int i = 0; i < 10; i++){
         state = this.environment.grid[this.x][this.y]; 
         if (state == 0) {
             turnRight();
@@ -40,7 +40,7 @@ public class Ant extends GameObject {
 
     public void render(Graphics g){
         g.setColor(Color.blue);
-        g.fillRect(x, y, 10, 10);
+        g.fillRect(x * 4, y * 4, 10, 10);
     }
     private void moveForward() {
         if (this.dir == UP) {
@@ -52,16 +52,16 @@ public class Ant extends GameObject {
         } else if (this.dir == LEFT) {
           this.x--;
         }
-        // if (this.x > width-1) {
-        //   this.x = 0;
-        // } else if (this.x < 0) {
-        //   this.x = width-1;
-        // }
-        // if (this.y > height-1) {
-        //   this.y = 0;
-        // } else if (this.y < 0) {
-        //   this.y = height-1;
-        // }
+        if (this.x > Game.WIDTH/4 -1) {
+          this.x = 0;
+        } else if (this.x < 0) {
+          this.x = Game.WIDTH/4 -1;
+        }
+        if (this.y > Game.HEIGHT/4 -1) {
+          this.y = 0;
+        } else if (this.y < 0) {
+          this.y = Game.HEIGHT/4 -1;
+        }
       }
       private void turnLeft() {
         this.dir--;
