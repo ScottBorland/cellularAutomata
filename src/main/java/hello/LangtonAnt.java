@@ -25,7 +25,7 @@ public class LangtonAnt extends GameObject {
     }
 
     public void tick(){
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < 100; i++){
         state = this.environment.grid[this.x][this.y]; 
         if (state == 0) {
             turnRight();

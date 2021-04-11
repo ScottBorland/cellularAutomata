@@ -30,18 +30,18 @@ public class Turmite extends GameObject {
     }
 
     public void tick(){
-        for(int i = 0; i < 100000; i++){
+        for(int i = 0; i < 1000; i++){
             state = this.environment.grid[this.x][this.y]; 
             int listLength = this.rules.length();
             for(int j = 0; j < listLength; j++){
                 if(state == j){
                     if(this.rules.charAt(j) == left){
                         turnLeft();
-                        this.environment.grid[this.x][this.y] = (j + 1) % (listLength - 1);
+                        this.environment.grid[this.x][this.y] = (j + 1) % (listLength);
                     }
                     else if(this.rules.charAt(j) == right){
                         turnRight();
-                        this.environment.grid[this.x][this.y] = (j + 1) % (listLength - 1);
+                        this.environment.grid[this.x][this.y] = (j + 1) % (listLength);
                     }
                 }
             }
