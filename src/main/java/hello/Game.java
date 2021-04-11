@@ -8,13 +8,14 @@ import java.util.Random;
 
 public class Game extends Canvas implements Runnable {
     public static final int WIDTH = 1920, HEIGHT = WIDTH / 12 * 9;
+    public static final int scale = 1;
     private Thread thread;
     private boolean running = false;
     private Random r;
     private Handler handler;
     private Environment environment;
     private HUD hud;
-    private int scale = 4; 
+    
 
     public Game() {
         handler = new Handler();
@@ -27,10 +28,11 @@ public class Game extends Canvas implements Runnable {
         //hud = new HUD();
 
         // handler.addObject(new Player(WIDTH/2 -32, HEIGHT/2 -32, ID.Player, handler));
-        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
-        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
-        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
-        handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
+
+        handler.addObject(new Turmite(WIDTH/(scale * 2) -200, HEIGHT/(scale * 2)-200, "LRLRLLLLLLLR", ID.Ant, handler, environment));
+        // handler.addObject(new Turmite(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), "LRRL", ID.Ant, handler, environment));
+        // handler.addObject(new Ant(r.nextInt(WIDTH/scale), r.nextInt(HEIGHT/scale), ID.Ant, handler, environment));
+        
         
         // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
         // handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));

@@ -1,22 +1,24 @@
-hello/KeyInput.java
- hello.KeyInput
 hello/Trail.java
  hello.Trail
 hello/Window.java
  hello.Window
+hello/LangtonAnt.java
+ hello.LangtonAnt
 hello/Environment.java
  hello.Environment
 hello/Handler.java
  hello.Handler
-hello/ID.java
- hello.ID
+hello/KeyInput.java
+ hello.KeyInput
 hello/BasicEnemy.java
  hello.BasicEnemy
+hello/ID.java
+ hello.ID
 hello/GameObject.java
  hello.GameObject
 hello/HUD.java
  hello.HUD
-hello/Ant.java
- hello.Ant
 hello/Game.java
  hello.Game
+hello/Turmite.java
+ hello.Turmite

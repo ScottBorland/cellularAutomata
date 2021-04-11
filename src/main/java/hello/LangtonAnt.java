@@ -5,7 +5,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import java.util.Random;
 
-public class Ant extends GameObject {
+public class LangtonAnt extends GameObject {
     
     Environment environment;
     Handler handler;
@@ -13,7 +13,7 @@ public class Ant extends GameObject {
     protected int UP, RIGHT, DOWN, LEFT;
     protected int state;
 
-    public Ant(int x, int y, ID id, Handler handler, Environment environment) {
+    public LangtonAnt(int x, int y, ID id, Handler handler, Environment environment) {
         super(x, y, id);
         this.handler = handler;
         this.environment = environment;
@@ -25,7 +25,7 @@ public class Ant extends GameObject {
     }
 
     public void tick(){
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 1; i++){
         state = this.environment.grid[this.x][this.y]; 
         if (state == 0) {
             turnRight();
@@ -40,7 +40,7 @@ public class Ant extends GameObject {
 
     public void render(Graphics g){
         g.setColor(Color.blue);
-        g.fillRect(x * 4, y * 4, 10, 10);
+        g.fillRect(x * Game.scale, y * Game.scale, 10, 10);
     }
     private void moveForward() {
         if (this.dir == UP) {
@@ -52,15 +52,15 @@ public class Ant extends GameObject {
         } else if (this.dir == LEFT) {
           this.x--;
         }
-        if (this.x > Game.WIDTH/4 -1) {
+        if (this.x > Game.WIDTH/Game.scale -1) {
           this.x = 0;
         } else if (this.x < 0) {
-          this.x = Game.WIDTH/4 -1;
+          this.x = Game.WIDTH/Game.scale -1;
         }
-        if (this.y > Game.HEIGHT/4 -1) {
+        if (this.y > Game.HEIGHT/Game.scale -1) {
           this.y = 0;
         } else if (this.y < 0) {
-          this.y = Game.HEIGHT/4 -1;
+          this.y = Game.HEIGHT/Game.scale -1;
         }
       }
       private void turnLeft() {
